@@ -69,6 +69,6 @@ socketIo.on("connection", async (socket) => { ///Handle khi có connect từ cli
     });
 });
 
-server.listen(3001, () => {
+server.listen(process.env.PORT, () => {
     console.log('Server đang chay tren cong 3001');
 });
