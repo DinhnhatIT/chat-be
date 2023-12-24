@@ -61,7 +61,7 @@ socketIo.on("connection", async (socket) => { ///Handle khi có connect từ cli
         const newMessages = [...conversation.messages, msg]
 
         await conversationClient.updateOne({_id: conversationId}, {messages: newMessages, last_message: msg})
-        socketIo.to(conversationId).emit('receive', msg)
+        socketIo.to(conversationId).emit('receive', {conversationId: conversationId, ...msg})
     })
 
     socket.on("disconnect", () => {
