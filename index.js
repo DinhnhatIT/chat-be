@@ -8,7 +8,7 @@ const MongoDBClient = require("./common/mongodb/mongodb");
 app.use(cors());
 const socketIo = require("socket.io")(server, {
     cors: {
-        origin: "*",
+        origin: "https://chat-app-steel-two.vercel.app",
     }
 });
 // nhớ thêm cái cors này để tránh bị Exception nhé :D  ở đây mình làm nhanh nên cho phép tất cả các trang đều cors được.
